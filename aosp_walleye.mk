@@ -29,10 +29,6 @@ $(call inherit-product, vendor/google/walleye/walleye-vendor.mk)
 $(call inherit-product-if-exists, vendor/google_devices/walleye/proprietary/device-vendor-walleye.mk)
 
 PRODUCT_PACKAGES += \
-    netutils-wrapper-1.0 \
-    Dialer \
-    Launcher3QuickStep \
-    WallpaperPicker \
     vndk_package
 
 PRODUCT_COPY_FILES += \
