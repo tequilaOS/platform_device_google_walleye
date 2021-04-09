@@ -25,7 +25,7 @@ $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/google/walleye/device-walleye.mk)
-$(call inherit-product-if-exists, vendor/google/walleye/walleye-vendor.mk)
+$(call inherit-product, vendor/google/walleye/walleye-vendor.mk)
 $(call inherit-product-if-exists, vendor/google_devices/walleye/proprietary/device-vendor-walleye.mk)
 
 PRODUCT_PACKAGES += \
