@@ -18,8 +18,14 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
+# Inherit some common PixelExperience stuff.
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_GAPPS_ARCH := arm64
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
+# Inherit device configuration
 $(call inherit-product, device/google/walleye/device-walleye.mk)
+$(call inherit-product-if-exists, vendor/google/walleye/walleye-vendor.mk)
 $(call inherit-product-if-exists, vendor/google_devices/walleye/proprietary/device-vendor-walleye.mk)
 
 PRODUCT_PACKAGES += \
@@ -32,12 +38,16 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/google/walleye/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
 
-PRODUCT_RESTRICT_VENDOR_FILES := owner
-
 PRODUCT_PACKAGES += com.android.vndk.current.on_vendor
 
 PRODUCT_MANUFACTURER := Google
-PRODUCT_BRAND := Android
+PRODUCT_BRAND := google
 PRODUCT_NAME := aosp_walleye
 PRODUCT_DEVICE := walleye
-PRODUCT_MODEL := AOSP on walleye
+PRODUCT_MODEL := Pixel 2
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_NAME=walleye \
+    PRIVATE_BUILD_DESC="walleye-user 11 RP1A.201005.004.A1 6934943 release-keys"
+
+BUILD_FINGERPRINT := google/walleye/walleye:11/RP1A.201005.004.A1/6934943:user/release-keys
