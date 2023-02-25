@@ -31,10 +31,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system_ext.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_vendor.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_vendor.mk)
 
-# Inherit some common PixelExperience stuff.
+# Inherit some common tequilaOS stuff.
 TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_GAPPS_ARCH := arm64
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+$(call inherit-product, vendor/tequila/config/common_full_phone.mk)
 
 # Inherit product specific makefiles
 $(call inherit-product, device/google/walleye/device.mk)
@@ -42,7 +41,7 @@ $(call inherit-product, vendor/google/walleye/walleye-vendor.mk)
 
 PRODUCT_MANUFACTURER := Google
 PRODUCT_BRAND := google
-PRODUCT_NAME := aosp_walleye
+PRODUCT_NAME := tequila_walleye
 PRODUCT_DEVICE := walleye
 PRODUCT_MODEL := Pixel 2
 
