@@ -15,7 +15,7 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_walleye.mk
+    $(LOCAL_DIR)/tequila_walleye.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_walleye-userdebug
+    tequila_walleye-userdebug
